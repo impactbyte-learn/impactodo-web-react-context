@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import * as axios from "axios";
 
+const API_URL = process.env.REACT_APP_API_URL || `http://localhost:3000`;
+
 class App extends Component {
   state = {
     text: "",
@@ -20,7 +22,7 @@ class App extends Component {
   }
 
   findAll() {
-    axios.get(`http://localhost:3000/todos`).then(res => {
+    axios.get(`${API_URL}/todos`).then(res => {
       this.setState({ todos: res.data });
     });
   }
@@ -30,9 +32,8 @@ class App extends Component {
   }
 
   handleSubmit(event) {
-    console.log("TODO TEXT:", this.state.text);
     axios
-      .post(`http://localhost:3000/todos`, {
+      .post(`${API_URL}/todos`, {
         text: this.state.text
       })
       .then(res => {
