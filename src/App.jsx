@@ -4,13 +4,22 @@ import styled from "styled-components";
 
 const API_URL = process.env.REACT_APP_API_URL || `http://localhost:3000`;
 
-const Button = styled.button`
+const base = `
   border-radius: 3px;
-  padding: 0.25em 1em;
-  margin: 0 1em;
   background: transparent;
   color: #800000;
   border: 2px solid #800000;
+`;
+
+const InputText = styled.input`
+  ${base};
+  padding: 0.25em;
+  margin: 0 1em;
+`;
+
+const Button = styled.button`
+  ${base};
+  padding: 0.25em 1em;
 `;
 
 class App extends Component {
@@ -26,29 +35,40 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.findAll();
   }
 
-  findAll() {
+  async findAll() {
     axios.get(`${API_URL}/todos`).then(res => {
       this.setState({ todos: res.data });
     });
   }
 
-  handleChange(event) {
-    this.setState({ text: event.target.value });
+  async handleChange(event) {
+    const text = await event.target.value;
+    if (text !== "") this.setState({ text: text });
   }
 
-  handleSubmit(event) {
-    axios
-      .post(`${API_URL}/todos`, {
-        text: this.state.text
-      })
-      .then(res => {
-        this.findAll();
-      });
+  async handleSubmit(event) {
     event.preventDefault();
+    const text = await this.state.text;
+    if (text !== "") {
+      axios
+        .post(`${API_URL}/todos`, {
+          text: text
+        })
+        .then(res => {
+          this.findAll();
+        });
+    }
+  }
+
+  handleDelete(event) {
+    const id = "";
+    axios.delete(`${API_URL}/todos/${id}`).then(res => {
+      this.findAll();
+    });
   }
 
   render() {
@@ -58,22 +78,21 @@ class App extends Component {
       <div className="App">
         <h1>IMPACT TODO</h1>
 
+        <form onSubmit={this.handleSubmit}>
+          <InputText
+            type="text"
+            placeholder="New todo text"
+            onChange={this.handleChange}
+          />
+          <Button type="submit">Submit</Button>
+        </form>
+
         <ul>
           {todos &&
             todos.map(todo => {
               return <li key={todo.id}>{todo.text}</li>;
             })}
         </ul>
-
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="New todo text"
-            value={this.state.text}
-            onChange={this.handleChange}
-          />
-          <Button type="submit">Submit</Button>
-        </form>
       </div>
     );
   }
