@@ -1,15 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
+import { AppContainer } from "react-hot-loader";
 
 import App from "./App.jsx";
 import registerServiceWorker from "./registerServiceWorker";
 
-ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-  document.getElementById("root")
-);
+// Wrap the rendering in a function:
+const render = Component => {
+  ReactDOM.render(
+    // Wrap App inside AppContainer
+    <AppContainer>
+      <Router>
+        <App />
+      </Router>
+    </AppContainer>,
+    document.getElementById("root")
+  );
+};
 
+// Do this once
 registerServiceWorker();
+
+// Render once
+render(App);
+
+// Webpack Hot Module Replacement API
+if (module.hot) {
+  module.hot.accept("./App", () => {
+    render(App);
+  });
+}
