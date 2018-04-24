@@ -7,6 +7,8 @@ import About from "./page/About";
 import Register from "./page/Register";
 import Login from "./page/Login";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const App = () => (
   <Router>
     <Switch>

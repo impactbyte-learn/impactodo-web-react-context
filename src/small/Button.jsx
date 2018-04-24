@@ -9,8 +9,8 @@ const StyledButton = styled.button`
   padding: 0.5em 1em;
 `;
 
-const Button = props => {
+const CustomButton = props => {
   return <StyledButton {...props}>{props.children}</StyledButton>;
 };
 
-export default Button;
+export default CustomButton;
