@@ -1,15 +1,14 @@
 import React from "react";
 
+import Page from "../container/Page";
 import PageTitle from "../small/PageTitle";
 
 class Register extends React.Component {
   render() {
     return (
-      <div className="Register">
-        <PageTitle>Register</PageTitle>
-
+      <Page title="Register">
         <p>Create a new account.</p>
-      </div>
+      </Page>
     );
   }
 }

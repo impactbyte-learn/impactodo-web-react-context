@@ -1,7 +1,8 @@
 import React from "react";
 import * as axios from "axios";
 
-import PageTitle from "../small/PageTitle";
+import Page from "../container/Page";
+
 import InputText from "../small/InputText";
 import Button from "../small/Button";
 import TodoList from "../small/TodoList";
@@ -62,9 +63,7 @@ class Home extends React.Component {
     const todos = this.state.todos;
 
     return (
-      <div className="Home">
-        <PageTitle>IMPACT TODO</PageTitle>
-
+      <Page title="Impact Todo">
         <form onSubmit={this.handleSubmit}>
           <InputText
             type="text"
@@ -80,7 +79,7 @@ class Home extends React.Component {
               return <Todo key={todo.id}>{todo.text}</Todo>;
             })}
         </TodoList>
-      </div>
+      </Page>
     );
   }
 }
