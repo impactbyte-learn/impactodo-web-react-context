@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
 import { AppContainer } from "react-hot-loader";
 
 import App from "./App.jsx";
@@ -11,9 +10,7 @@ const render = Component => {
   ReactDOM.render(
     // Wrap App inside AppContainer
     <AppContainer>
-      <Router>
-        <App />
-      </Router>
+      <App />
     </AppContainer>,
     document.getElementById("root")
   );

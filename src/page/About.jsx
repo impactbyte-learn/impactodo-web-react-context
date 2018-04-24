@@ -8,7 +8,7 @@ class About extends React.Component {
       <div className="About">
         <PageTitle>About App</PageTitle>
 
-        <p>Hello, this is a simple todo app.</p>
+        <p>Hello, this is a simple todo app!!!.</p>
       </div>
     );
   }
