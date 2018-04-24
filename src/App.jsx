@@ -1,35 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import * as axios from "axios";
 import styled from "styled-components";
 
+import AppTitle from "./small/AppTitle";
+import InputText from "./small/InputText";
+import Button from "./small/Button";
+
 const API_URL = process.env.REACT_APP_API_URL || `http://localhost:3000`;
 
-const base = `
-  border-radius: 3px;
-  background: transparent;
-  color: #800000;
-  border: 2px solid #800000;
-`;
-
-const PageTitle = styled.h1`
-  font-family: sans-serif;
-  font-weight: bold;
-  color: #800000;
-  margin: 0.5em 1em;
-`;
-
-const InputText = styled.input`
-  ${base};
-  padding: 0.25em;
-  margin: 1em;
-`;
-
-const Button = styled.button`
-  ${base};
-  padding: 0.25em 1em;
-`;
-
-class App extends Component {
+class App extends React.Component {
   state = {
     text: "",
     todos: []
@@ -83,7 +62,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <PageTitle>IMPACT TODO</PageTitle>
+        <AppTitle>IMPACT TODO</AppTitle>
 
         <form onSubmit={this.handleSubmit}>
           <InputText
