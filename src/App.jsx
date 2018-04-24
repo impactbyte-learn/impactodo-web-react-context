@@ -5,6 +5,8 @@ import styled from "styled-components";
 import AppTitle from "./small/AppTitle";
 import InputText from "./small/InputText";
 import Button from "./small/Button";
+import TodoList from "./small/TodoList";
+import Todo from "./small/Todo";
 
 const API_URL = process.env.REACT_APP_API_URL || `http://localhost:3000`;
 
@@ -73,12 +75,12 @@ class App extends React.Component {
           <Button type="submit">Submit</Button>
         </form>
 
-        <ul>
+        <TodoList>
           {todos &&
             todos.map(todo => {
-              return <li key={todo.id}>{todo.text}</li>;
+              return <Todo key={todo.id}>{todo.text}</Todo>;
             })}
-        </ul>
+        </TodoList>
       </div>
     );
   }
