@@ -1,8 +1,17 @@
 import React, { Component } from "react";
-
 import * as axios from "axios";
+import styled from "styled-components";
 
 const API_URL = process.env.REACT_APP_API_URL || `http://localhost:3000`;
+
+const Button = styled.button`
+  border-radius: 3px;
+  padding: 0.25em 1em;
+  margin: 0 1em;
+  background: transparent;
+  color: #800000;
+  border: 2px solid #800000;
+`;
 
 class App extends Component {
   state = {
@@ -63,7 +72,7 @@ class App extends Component {
             value={this.state.text}
             onChange={this.handleChange}
           />
-          <input type="submit" value="Submit" />
+          <Button type="submit">Submit</Button>
         </form>
       </div>
     );
