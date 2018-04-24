@@ -11,10 +11,17 @@ const base = `
   border: 2px solid #800000;
 `;
 
+const PageTitle = styled.h1`
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #800000;
+  margin: 0.5em 1em;
+`;
+
 const InputText = styled.input`
   ${base};
   padding: 0.25em;
-  margin: 0 1em;
+  margin: 1em;
 `;
 
 const Button = styled.button`
@@ -76,7 +83,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>IMPACT TODO</h1>
+        <PageTitle>IMPACT TODO</PageTitle>
 
         <form onSubmit={this.handleSubmit}>
           <InputText
