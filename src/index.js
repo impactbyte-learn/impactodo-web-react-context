@@ -1,11 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import App from "./App.jsx";
+// import { Provider } from 'react-redux';
+// import configureStore from 'state/store';
+// const store = configureStore();
+
 import registerServiceWorker from "./registerServiceWorker";
+import App from "./App";
 
-// Wrap the rendering in a function:
-ReactDOM.render(<App />, document.getElementById("root"));
-
-// Do this once
 registerServiceWorker();
+
+const render = Component => {
+  return ReactDOM.render(
+    // When using Redux:
+    // <Provider store={store}>
+    //     <Component />
+    // </Provider>,
+    <Component />,
+    document.getElementById("root")
+  );
+};
+
+render(App);
+
+if (module.hot) {
+  module.hot.accept("./App", () => {
+    const NextApp = require("./App").default;
+    render(NextApp);
+  });
+}
