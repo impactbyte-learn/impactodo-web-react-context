@@ -33,7 +33,7 @@ class TodoApp extends React.Component {
 
   async handleChange(event) {
     const text = await event.target.value;
-    if (text !== "") this.setState({ text: text });
+    this.setState({ text: text });
   }
 
   async handleSubmit(event) {
