@@ -40,33 +40,28 @@ class TodoApp extends React.Component {
     event.preventDefault();
     const text = await this.state.text;
     if (text !== "") {
-      axios
+      await axios
         .post(`${API_URL}/todos`, {
           text: text
         })
         .then(res => {
           this.findAll();
         });
+      this.setState({ text: "" });
     }
-  }
-
-  handleDelete(event) {
-    const id = "";
-    axios.delete(`${API_URL}/todos/${id}`).then(res => {
-      this.findAll();
-    });
   }
 
   render() {
     const todos = this.state.todos;
 
     return (
-      <div>
+      <div style={{ border: "1px solid #ccc" }}>
         <form onSubmit={this.handleSubmit}>
           <InputText
             type="text"
             placeholder="What's on your mind?"
             onChange={this.handleChange}
+            value={this.state.text}
           />
           <Button type="submit">Submit</Button>
         </form>
@@ -74,7 +69,11 @@ class TodoApp extends React.Component {
         <TodoList>
           {todos &&
             todos.map(todo => {
-              return <Todo key={todo.id}>{todo.text}</Todo>;
+              return (
+                <Todo key={todo.id} id={todo.id} refresh={this.findAll}>
+                  {todo.text}
+                </Todo>
+              );
             })}
         </TodoList>
       </div>
