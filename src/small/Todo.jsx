@@ -18,18 +18,18 @@ const StyledDeleteButton = styled.span`
   cursor: pointer;
 `;
 
-const Todo = props => {
+const Todo = ({ children, id, bookmark, refresh }) => {
   async function handleDelete(id) {
     await axios.delete(`${API_URL}/todos/${id}`);
-    props.refresh();
+    refresh();
   }
 
   return (
-    <StyledTodo {...props}>
-      <StyledDeleteButton onClick={() => handleDelete(props.id)}>
+    <StyledTodo>
+      <StyledDeleteButton onClick={() => handleDelete(id)}>
         x
       </StyledDeleteButton>
-      {props.children}
+      {children}
     </StyledTodo>
   );
 };

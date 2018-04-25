@@ -70,7 +70,12 @@ class TodoApp extends React.Component {
           {todos &&
             todos.map(todo => {
               return (
-                <Todo key={todo.id} id={todo.id} refresh={this.findAll}>
+                <Todo
+                  key={todo.id}
+                  id={todo.id}
+                  bookmark={todo.bookmark}
+                  refresh={this.findAll}
+                >
                   {todo.text}
                 </Todo>
               );
