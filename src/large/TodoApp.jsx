@@ -55,7 +55,7 @@ class TodoApp extends React.Component {
     const todos = this.state.todos;
 
     return (
-      <div style={{ border: "1px solid #ccc" }}>
+      <div>
         <form onSubmit={this.handleSubmit}>
           <InputText
             type="text"
