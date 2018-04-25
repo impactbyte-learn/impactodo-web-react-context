@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Container, Row, Col } from "reactstrap";
 
 import NavigationBar from "../medium/NavigationBar";
