@@ -5,6 +5,7 @@ const StyledTodoList = styled.ul`
   font-family: sans-serif;
   color: #800000;
   padding-left: 0;
+  margin-left: 0.5em;
   max-width: 300px;
 `;
 

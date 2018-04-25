@@ -5,10 +5,12 @@ import NavLink from "../small/NavLink";
 
 const StyledNavigationBar = styled.div`
   font-weight: bold;
-  color: #800000;
-  padding-bottom: 0.5em;
-  margin: 0.5em 1em;
+  padding: 1em;
   border-bottom: 2px solid #800000;
+  a {
+    padding-left: 1em;
+    color: #800000;
+  }
 `;
 
 const NavigationBar = props => {
