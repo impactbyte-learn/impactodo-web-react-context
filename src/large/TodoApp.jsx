@@ -65,7 +65,7 @@ class TodoApp extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <InputText
             type="text"
-            placeholder="New todo text"
+            placeholder="What's on your mind?"
             onChange={this.handleChange}
           />
           <Button type="submit">Submit</Button>

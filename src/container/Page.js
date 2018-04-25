@@ -12,7 +12,7 @@ const Page = props => (
       </Col>
     </Row>
     <Row className="justify-content-center">
-      <Col xs={10} md={6} lg={4}>
+      <Col xs={12} sm={10} md={6} lg={4}>
         <PageTitle>{props.title}</PageTitle>
         {props.children}
       </Col>
