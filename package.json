@@ -35,6 +35,7 @@
     "react-test-renderer": "^16.3.2"
   },
   "scripts": {
+    "postinstall": "./setup.sh",
     "dev": "PORT=8000 react-scripts start",
     "start": "PORT=8000 react-scripts start",
     "build": "react-scripts build",
