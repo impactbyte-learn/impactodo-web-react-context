@@ -51,10 +51,6 @@ class TodoApp extends React.PureComponent {
     }
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   return false;
-  // }
-
   render() {
     const todos = this.state.todos;
 
