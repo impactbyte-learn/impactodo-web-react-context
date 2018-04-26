@@ -16,6 +16,9 @@
     "reactstrap": "next",
     "styled-components": "^3.2.6"
   },
+  "devDependencies": {
+    "flow-bin": "^0.70.0"
+  },
   "scripts": {
     "dev": "PORT=8000 react-scripts start",
     "start": "PORT=8000 react-scripts start",

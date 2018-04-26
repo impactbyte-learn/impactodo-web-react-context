@@ -8,7 +8,7 @@ import Todo from "../small/Todo";
 
 const API_URL = process.env.REACT_APP_API_URL || `http://localhost:3000`;
 
-class TodoApp extends React.Component {
+class TodoApp extends React.PureComponent {
   state = {
     text: "",
     todos: []
@@ -50,6 +50,10 @@ class TodoApp extends React.Component {
       this.setState({ text: "" });
     }
   }
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return false;
+  // }
 
   render() {
     const todos = this.state.todos;
