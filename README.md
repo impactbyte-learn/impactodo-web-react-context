@@ -1,6 +1,6 @@
-# Impact Todo Web React
+# Impact Todo Web React & Redux
 
-Impact Todo web application frontend with React. Also access the backend API.
+Impact Todo web application frontend with React & Redux. Also access the backend API.
 
 ## Development
 
