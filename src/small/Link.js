@@ -42,5 +42,5 @@ export default class Link extends React.Component {
 
 Link.propTypes = {
   page: PropTypes.string,
-  children: PropTypes.element.isRequired
+  children: PropTypes.string || PropTypes.element.isRequired
 };
