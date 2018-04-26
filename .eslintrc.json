@@ -9,10 +9,19 @@
       "experimentalObjectRestSpread": true
     }
   },
-  "rules": {
-    "semi": 2,
-    "no-process-env": 0
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "mocha": true
   },
-  "plugins": ["react"],
-  "extends": ["standard", "plugin:react/recommended"]
+  "rules": {
+    "semi": 2
+  },
+  "plugins": ["flowtype", "react"],
+  "extends": [
+    "standard",
+    "plugin:flowtype/recommended",
+    "plugin:react/recommended"
+  ]
 }
