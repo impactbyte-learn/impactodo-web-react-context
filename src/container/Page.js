@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "react";
 import { Container, Row, Col } from "reactstrap";
 
 import NavigationBar from "../medium/NavigationBar";
@@ -20,10 +19,5 @@ const Page = props => (
     </Row>
   </Container>
 );
-
-Page.propTypes = {
-  title: PropTypes.isRequired,
-  children: PropTypes.isRequired
-};
 
 export default Page;

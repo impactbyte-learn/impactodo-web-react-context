@@ -6,7 +6,7 @@ const AppContext = React.createContext();
 
 class AppProvider extends React.Component {
   state = {
-    name: "Gigas",
+    name: "Giga",
     age: 10,
     cool: true
   };

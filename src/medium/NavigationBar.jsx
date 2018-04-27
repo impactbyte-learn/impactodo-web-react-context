@@ -20,7 +20,8 @@ const NavigationBar = props => {
       <NavLink to="/about">About</NavLink>
       <NavLink to="/register">Register</NavLink>
       <NavLink to="/login">Login</NavLink>
-      <NavLink to="/context">Context</NavLink>
+      <NavLink to="/experiment">Experiment</NavLink>
+      <NavLink to="/experiment2">Experiment 2</NavLink>
     </StyledNavigationBar>
   );
 };
