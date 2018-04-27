@@ -6,6 +6,7 @@ import Home from "./page/Home";
 import About from "./page/About";
 import Register from "./page/Register";
 import Login from "./page/Login";
+import Context from "./page/Context";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -16,6 +17,7 @@ const App = () => (
       <Route path="/about" component={About} />
       <Route path="/register" component={Register} />
       <Route path="/login" component={Login} />
+      <Route path="/context" component={Context} />
     </Switch>
   </Router>
 );
