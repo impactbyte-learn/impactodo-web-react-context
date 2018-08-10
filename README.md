@@ -1,5 +1,7 @@
 # Impact Todo Web React & Redux
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/impactbyte-learn/impactodo-web-react-context.svg)](https://greenkeeper.io/)
+
 Impact Todo web application frontend with React & Redux. Also access the backend API.
 
 ## Development
